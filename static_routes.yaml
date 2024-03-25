@@ -1,0 +1,12 @@
+routes:
+  - prefix: 10.0.0.0
+    mask: 255.255.255.0
+    fwd_list:
+      - fwd: 198.18.6.10
+        metric: 1
+
+  - prefix: 198.18.18.0
+    mask: 255.255.255.0
+    fwd_list:
+      - fwd: 198.18.5.2
+        metric: 1

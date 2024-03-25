@@ -1,0 +1,32 @@
+---
+
+testbed:
+  name: Saturday Night and the Networks Alright
+
+devices:
+  R1:
+    connections:
+      cli:
+        ip: "198.18.6.3"
+        protocol: ssh
+    credentials:
+      default:
+        password: "C1sco12345"
+        username: "developer"
+      enable:
+        password: "C1sco12345"
+    os: iosxe
+    type: iosxe
+  R2:
+    connections:
+      cli:
+        ip: "198.18.5.2"
+        protocol: ssh
+    credentials:
+      default:
+        password: "C1sco12345"
+        username: "developer"
+      enable:
+        password: "C1sco12345"
+    os: iosxe
+    type: iosxe
