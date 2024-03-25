@@ -40,6 +40,10 @@ def get_routes(ip, username, password):
 
     response = requests.get(url, headers=headers, auth=auth, verify=False)
     print(f"\nThe response body for static routes on device {ip}:\n")
+    if not response.ok:
+        print("Error:")
+        print(response.text)
+
     pprint(response.json())
 
 
