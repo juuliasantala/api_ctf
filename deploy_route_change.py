@@ -23,7 +23,7 @@ def edit_routes(ip, username, password, config):
 
     response = requests.put(url, headers=headers, auth=auth, data=config, verify=False)
     print(f"Status code of deploying the configuration change: {response.status_code}")
-    if str(response.status_code)[0] != "2":
+    if not response.ok:
         print("Error:")
         print(response.text)
 
