@@ -25,7 +25,16 @@ class PingTestcase(aetest.Testcase):
         Simple ping test: using pyats API "ping", try pinging each of the IP addresses
         in the destinations tuple.
         '''
-        # WRITE YOUR PING TEST HERE
+        for destination in destinations:
+            with steps.start(
+                f"Checking Ping from {device.hostname} to {destination}", continue_=True
+                ) as step:
+                try:
+                    # TODO 1: WRITE YOUR LINE HERE
+                except:
+                    step.failed(f'Ping {destination} from device {device.hostname} unsuccessful')
+                else:
+                    step.passed(f'Ping {destination} from device {device.hostname} successful')
 
     @aetest.cleanup
     def disconnect(self, testbed):
@@ -48,4 +57,5 @@ def make_ping_test(testbed_path:str, destinations:tuple)->tuple:
 if __name__ == "__main__":
     my_testbed = "testbed.yaml"
     my_destinations = ('198.18.18.101', '198.18.6.1')
-    my_ping_test = make_ping_test(my_testbed, my_destinations)
+
+    # TODO 2: Call the function make_ping_test with your testbed and destinations
