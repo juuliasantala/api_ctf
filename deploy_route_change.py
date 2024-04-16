@@ -21,7 +21,7 @@ def edit_routes(ip, username, password, config):
     }
     auth = (username, password)
 
-    response = requests.put(url, headers=headers, auth=auth, data=config, verify=False)
+    response = requests.<TODO 1: replace with the correct method>(url, headers=headers, auth=auth, data=config, verify=False)
     print(f"Status code of deploying the configuration change: {response.status_code}")
     if not response.ok:
         print("Error:")
@@ -30,8 +30,14 @@ def edit_routes(ip, username, password, config):
 def create_config(template, values):
     '''Create a configuration from Jinja2 template and values from YAML file.'''
 
-    # WRITE YOUR CODE HERE
+    with open(values, encoding="utf-8") as my_values:
+        config = yaml.safe_load(my_values.read())
+    
+    with open(template, encoding="utf-8") as my_template:
+        template =  # TODO 2: read the content of my_template and save it as a jinja2.Template object
 
+    configuration = # TODO 3: render template with config["routes"]
+    return configuration
 
 if __name__ == "__main__":
 

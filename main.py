@@ -23,8 +23,8 @@ PING_DESTINATIONS = ('198.18.18.101', '198.18.6.1')
 if __name__ == "__main__":
 
     # Run a pre ping test
-    pre_test = make_ping_test(TESTBED, PING_DESTINATIONS)
+    make_ping_test(TESTBED, PING_DESTINATIONS)
 
-    # Todo 1: Make the config change using route template and route values
+    # TODO 1: Make the config change using route template and route values
 
-    # Todo 2: Run a post ping test
+    # TODO 2: Run a post ping test
