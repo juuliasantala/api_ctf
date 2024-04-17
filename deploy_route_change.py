@@ -45,5 +45,5 @@ if __name__ == "__main__":
     DEVICE_USER = "developer"
     DEVICE_PASSWORD = "C1sco12345"
 
-    interface_config = create_config("template.j2", "static_routes.yaml")
-    edit_routes(DEVICE_IP, DEVICE_USER, DEVICE_PASSWORD, interface_config)
+    route_config = create_config("template.j2", "static_routes.yaml")
+    edit_routes(DEVICE_IP, DEVICE_USER, DEVICE_PASSWORD, route_config)
